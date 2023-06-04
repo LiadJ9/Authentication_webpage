@@ -15,12 +15,14 @@ app.set('view engine', "ejs")
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const { callbackPromise } = require('nodemailer/lib/shared');
 var password = password_hidden;
+// This is the connection string to the mongo DB, it requires a user and a password;
 const uri = `mongodb+srv://authapp:${password}@authcluster.hwijynr.mongodb.net`;
 const client = new MongoClient(uri);
 
 // Email info for sending emails
 var transporter = nodemailer.createTransport({
     service: 'gmail',
+    // this is Where an object containing the "mail" and "pass" attributes to connect to the service provider;
     auth: auth
   });
   
