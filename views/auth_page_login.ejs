@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+
+
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem; height: 30rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <h5 class="card-title" style="color:gray">התחברות</h5>
+                </div>
+            <form action="/confirming" method="post">
+                <div class="mb-3">
+                    <div class="d-flex justify-content-end">
+                        <label for="InputEmail" class="form-label"> :הזן מייל</label>
+                    </div>
+                <input type="email" class="form-control" id="InputEmail" aria-describedby= "email" placeholder="dugma@email.com" name="email">
+                <!-- <div id="email" class="form-text"> I don't need text here but why not keep it lol </div> -->
+                </div>
+                <button style="border-color: rgb(165, 193, 82);  background-color: rgb(165, 193, 82); width: 250px;"type="submit" class="btn btn-primary">!בואו נתחיל</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<%- include('partials/footer') %>

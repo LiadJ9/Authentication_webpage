@@ -1,0 +1,54 @@
+<%- include('partials/header') -%>
+
+    <div style="position:absolute; left: 550px;">
+        <a class="btn btn-primary" href="/" role="button" style="background-color: rgb(165, 193, 82); border-color: rgb(165, 193, 82) ;">חזור</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem; height: 30rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <h5 class="card-title" style="color:gray">אימות</h5>
+                </div>
+            <form class="needs-validation" action="/confirmation" method="post" novalidate>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-end">
+                    <label for="InputCode1" class="form-label"> הקלד את הקוד שקיבלת</label>
+                    </div>
+                <div class="row justify-content-center"> 
+                <input type="hidden" id="email" name="email" value=<%= email %>>
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode1" aria-describedby= "code1"  name="code1">
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode2" aria-describedby= "code2"  name="code2">
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode3" aria-describedby= "code3"  name="code3">
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode4" aria-describedby= "code4"  name="code4">
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode5" aria-describedby= "code5"  name="code5">
+                <input style="width: 40px; margin-right: 5px; background-color: rgb(243, 243, 243); color: rgb(16, 14, 14);" type="number" min="0" max="9" maxlength="1" class="form-control" id="InputCode6" aria-describedby= "code6"  name="code6">
+                </div>  
+
+                </div>
+                <button style="background-color: rgb(165, 193, 82); border-color: rgb(165, 193, 82) ; padding-top: 10px ; width: 250px;"type="submit"  id="button_confirm"class="btn btn-primary">אימות קוד סודי</button>
+            </form>
+                 <div class="d-flex justify-content-center">
+                    <iframe name="votar" style="display:none;"></iframe>
+                    <form class="needs-validation" action="/resend_code" method="post" class="inline" target="votar"novalidate>
+                        <input readonly type="hidden" id="email" name="email" value=<%= email %>>
+                        <button class="link-button" type="submit" style="color:rgb(165, 193, 82); background-color: transparent;" onclick="myfunc() ">שלחו לי את הקוד שוב</a>                        
+                    </form>  
+                    
+                    <script>
+                        function myfunc() {
+                        document.getElementById("confirmation").innerHTML = "Code sent!";
+                        }
+                    </script>
+                </div>
+                <div class="d-flex justify-content-center">
+                <p1 style="font-size: larger;" id="confirmation"></p1>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<%- include('partials/footer') %>
